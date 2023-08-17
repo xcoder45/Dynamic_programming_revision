@@ -1,0 +1,34 @@
+/* package codechef; // don't place package name! */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Devesh
+{
+    // top down problem
+    static int fib(int n , int dp[])
+    {
+        if(n==0)
+        return 0;
+        if(n==1)
+        return 1;
+        if(dp[n]!=-1)
+        return dp[n];
+        return dp[n] =  fib(n-1,dp)+ fib(n-2,dp);
+        
+    }
+    
+    public static void main(String[] args) 
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = 5;
+        int dp[] = new int[n];
+        Arrays.fill(dp,-1);
+        
+        int ans = fib(5 , dp);
+        System.out.println(ans);
+        
+        
+    }
+}
